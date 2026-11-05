@@ -1,5 +1,7 @@
 # Teskmaster - Sistema de Gerenciamento de Eventos
 
+Este fork acompanha um projeto acadêmico de gerenciamento de eventos. O [repositório original](https://github.com/TeskMaster/Tesk-Master) concentra o histórico da equipe. `Front/` contém a interface, `config-service/` reúne a configuração e `microsservices_esofii/` contém os serviços. As seções de requisitos abaixo registram o planejamento do projeto.
+
 Teskmaster é uma aplicação web pensada para facilitar o planejamento e a execução de eventos acadêmicos, corporativos ou sociais, com foco em uma experiência segura, responsiva e intuitiva.
 
 🎯 Objetivo
