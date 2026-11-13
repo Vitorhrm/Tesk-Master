@@ -1,8 +1,29 @@
-# Teskmaster - Sistema de Gerenciamento de Eventos
+# Tesk-Master
 
-Este fork acompanha um projeto acadêmico de gerenciamento de eventos. O [repositório original](https://github.com/TeskMaster/Tesk-Master) concentra o histórico da equipe. `Front/` contém a interface, `config-service/` reúne a configuração e `microsservices_esofii/` contém os serviços. As seções de requisitos abaixo registram o planejamento do projeto.
+Fork de um protótipo acadêmico para gerenciamento de eventos. O [repositório da equipe](https://github.com/TeskMaster/Tesk-Master) concentra o histórico do trabalho.
 
-Teskmaster é uma aplicação web pensada para facilitar o planejamento e a execução de eventos acadêmicos, corporativos ou sociais, com foco em uma experiência segura, responsiva e intuitiva.
+## Estrutura
+
+| Diretório | Conteúdo |
+| --- | --- |
+| [`Front/`](Front/) | Páginas de login, cadastro e painel em HTML, CSS e JavaScript |
+| [`config-service/criar-usuarios/`](config-service/criar-usuarios/) | Cadastro e listagem de usuários |
+| [`config-service/crud-de-eventos/`](config-service/crud-de-eventos/) | Endpoints para salvar e atualizar eventos |
+| [`config-service/notification-service/`](config-service/notification-service/) | Endpoint de envio de e-mail por SMTP |
+| [`microsservices_esofii/`](microsservices_esofii/) | Servidores Spring Cloud de configuração e descoberta |
+
+## Explorar o protótipo
+
+Abra [`Front/login.html`](Front/login.html) em um navegador para visualizar a interface. Use JDK 17. Os três serviços em `config-service/` têm wrapper Maven. Para empacotar os servidores de configuração e descoberta, instale o Maven e rode `mvn -f microsservices_esofii/pom.xml verify` na raiz. Os serviços de usuários e eventos esperam bancos MySQL locais chamados `usuarios` e `eventos`.
+
+Configure `SPRING_DATASOURCE_USERNAME` e `SPRING_DATASOURCE_PASSWORD` para as instâncias que usam MySQL. Para experimentar o serviço de notificações, defina `SPRING_MAIL_USERNAME` e `SPRING_MAIL_PASSWORD` no ambiente do processo.
+
+## Planejamento acadêmico
+
+O registro abaixo reúne os objetivos e requisitos definidos durante o projeto, incluindo funcionalidades previstas para etapas futuras.
+
+<details>
+<summary>Objetivos, metodologia e requisitos originais</summary>
 
 🎯 Objetivo
 
@@ -21,7 +42,7 @@ Desenvolver uma plataforma acessível por navegadores modernos para:
 - *Banco de Dados:* (a definir, exemplo: MySQL)
 - *Gerenciamento:* Trello (Kanban), reuniões semanais
 
-# Modelos de Processos
+## Modelos de Processos
 
 ## 🔄 Metodologia de Desenvolvimento
 
@@ -68,6 +89,4 @@ Adotamos *Scrum*, com:
 - *RNF05:* Tolerância a falhas em microserviços (fallbacks e retries)
 - *RNF06:* Orquestração e deploy com Docker e Docker Compose
 
-
-
-
+</details>
